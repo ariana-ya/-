@@ -19,4 +19,3 @@ jobs:
           run: |
             python main_test_is_empty.py
             python main_test_values.py
-            python main_test_time.py
