@@ -1,0 +1,22 @@
+name: isaev-CI_CD
+ 
+on: 
+    push:
+        branches: 
+            - main
+            - dev
+jobs:
+  my_tests: 
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout perository
+          uses: actions/checkout@v2
+        - name: setup python
+          uses: actions/setup-python@v2
+          with:
+            python-version: 3.9
+        - name: testing
+          run: |
+            python main_test_is_empty.py
+            python main_test_values.py
+            python main_test_time.py
