@@ -9,3 +9,4 @@
 ##### Файл _**graf.png**_—график зависимости времени работы функции _sum() от количества значений в файле. 
 ##### Файл _**test_time.py**_—более гибкая реализация тестирования времени без возможности проверить правильность ответов(без unittests).
 ##### Все _**txt**_ файлы—вспомогательные файлы со значениями для тестов.
+[![isaev-CI_CD](https://github.com/S0rrowFu11/hse_tp_hw_2_isaev/actions/workflows/isaev-CI_CD.yml/badge.svg)](https://github.com/S0rrowFu11/hse_tp_hw_2_isaev/actions/workflows/isaev-CI_CD.yml)
