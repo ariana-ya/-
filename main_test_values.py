@@ -1,0 +1,50 @@
+import unittest
+from classes import DataClass
+
+class ValuesTest(unittest.TestCase):
+  def test_values_min(self):
+    array1 = DataClass([1, 2, 3])
+    array2 = DataClass([1, 2])
+    array3 = DataClass([1])
+    array4 = DataClass([1, 2, 3, -100])
+    array5 = DataClass([1, 2, 3, 1, 1])
+    self.assertEqual(array1._min(), 1)
+    self.assertEqual(array2._min(), 1)
+    self.assertEqual(array3._min(), 1)
+    self.assertEqual(array4._min(), -100)
+    self.assertEqual(array5._min(), 1)
+  def test_values_max(self):
+    array1 = DataClass([1, 2, 3, 10])
+    array2 = DataClass([-1, -2, -3, -10])
+    array3 = DataClass([1, 2, 3, 10, 1000000])
+    array4 = DataClass([1])
+    array5 = DataClass([1, 2])
+    self.assertEqual(array1._max(), 10)
+    self.assertEqual(array2._max(), -1)
+    self.assertEqual(array3._max(), 1000000)
+    self.assertEqual(array4._max(), 1)
+    self.assertEqual(array5._max(), 2)
+  def test_values_sum(self):
+    array1 = DataClass([1, 2, 3, 9, 15])
+    array2 = DataClass([1, 2, 3, 9, 16])
+    array3 = DataClass([1, 2, 3, 9, 17])
+    array4 = DataClass([1, 2, 3, 9, 18])
+    array5 = DataClass([1, 2, 3, 9, 19])
+    self.assertEqual(array1._sum(), 30)
+    self.assertEqual(array2._sum(), 31)
+    self.assertEqual(array3._sum(), 32)
+    self.assertEqual(array4._sum(), 33)
+    self.assertEqual(array5._sum(), 34)
+  def test_values_mult(self):
+    array1 = DataClass([1, 2, 3, 0])
+    array2 = DataClass([1, 2, 3, 10])
+    array3 = DataClass([1, 2, 3, 11])
+    array4 = DataClass([1, 2, 3, 4])
+    array5 = DataClass([1, 2, 3, 6])
+    self.assertEqual(array1._mult(), 0)
+    self.assertEqual(array2._mult(), 60)
+    self.assertEqual(array3._mult(), 66)
+    self.assertEqual(array4._mult(), 24)
+    self.assertEqual(array5._mult(), 36)
+if __name__ == "__main__":
+  unittest.main()
