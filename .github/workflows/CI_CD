@@ -1,0 +1,22 @@
+name: tmp_CICD
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main", "dev"]
+  pull_request:
+    branches: "main"
+jobs:
+  testing:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout perository
+          uses: actions/checkout@v2
+        - name: setup python
+          uses: actions/setup-python@v2
+          with:
+            python-version: 3.9
+        - name: testing
+          run: |
+            python main_test_is_empty.py
+            python main_test_time.py
+            python main_test_values.py
